@@ -12,6 +12,23 @@ export default class InputHandler{
             }
         });
 
+        document.addEventListener('keyup', event =>{
+
+            switch(event.keyCode){
+                case 37:
+                    if(paddle.speed < 0){ //if it's moving left
+                        paddle.stop();
+                    }
+                    break;
+                    
+                case 39:
+                    if(paddle.speed > 0){ //if it's moving left
+                        paddle.stop();
+                    }
+                    break;
+            }
+        });
+
     }
 
 }

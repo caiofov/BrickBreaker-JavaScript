@@ -7,8 +7,6 @@ body{
     border: 1px solid black;
 }
 
-
-
 h1{
     margin:0;
     margin-bottom: 1%;
@@ -17,4 +15,8 @@ h1{
 
 h1::after, h1::before{
     content: '\1F47E';
+}
+
+#ball{
+    display: none;
 }
