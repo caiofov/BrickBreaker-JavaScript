@@ -51,23 +51,23 @@ export default class Ball{
             this.position.y = paddleTop - this.size;
         }
 
-        // //left collision
-        // else if(insideLeft && !(insideRight) && insideTop){
-        //     this.speed.y = -this.speed.y;
-        //     this.speed.x = -this.speed.x;
+        //right collision
+        else if(insideLeft && !(insideRight) && ballRight < paddleRight + this.size && insideTop){
+            this.speed.y = -this.speed.y;
+            this.speed.x = -this.speed.x;
 
-        //     this.position.x = paddleRight;
-        // }
+            this.position.x = paddleRight;
+        }
 
-        // //right collision
-        // else if(insideRight && !(insideLeft) && insideTop){
-        //         this.speed.y = -this.speed.y;
-        //         this.speed.x = -this.speed.x;
+        //right collision
+        else if(insideRight && !(insideLeft) && ballLeft > paddleLeft + this.size && insideTop){
+                this.speed.y = -this.speed.y;
+                this.speed.x = -this.speed.x;
 
-        //         this.position.x = paddleLeft - this.size;
+                this.position.x = paddleLeft - this.size;
 
 
-        // }
+        }
 
     }
 }
