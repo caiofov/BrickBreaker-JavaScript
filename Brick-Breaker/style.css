@@ -1,14 +1,14 @@
-#gameScreen{
-    border: 1px solid black;
-    width: 800px;
-    height: 600px;
-}
-
 body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100vw;
 }
+#gameScreen{
+    border: 1px solid black;
+}
+
+
 
 h1{
     margin:0;
