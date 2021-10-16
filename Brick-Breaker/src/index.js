@@ -9,7 +9,7 @@ let canvas = document.getElementById("gameScreen");
 let context = canvas.getContext("2d");
 
 let paddle = new Paddle(GAME_WIDTH,GAME_HEIGHT);
-let ball = new Ball();
+let ball = new Ball(GAME_WIDTH,GAME_HEIGHT);
 
 new InputHandler(paddle);
 let lastTime = 0;
@@ -20,7 +20,7 @@ function gameLoop(timestamp){ //writing a function instead a loop makes it more 
     
     context.clearRect(0, 0, GAME_WIDTH, GAME_WIDTH); //cleans the screen
     paddle.update(deltaTime);
-    ball.update();
+    ball.update(deltaTime);
 
     paddle.draw(context);
     ball.draw(context);
