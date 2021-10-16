@@ -1,6 +1,7 @@
 import Paddle from './paddle.js';
 import InputHandler from './input.js';
 import Ball from './ball.js';
+import Game from './game.js';
 
 const GAME_WIDTH = 800;
 const GAME_HEIGHT = 600;
@@ -8,10 +9,10 @@ const GAME_HEIGHT = 600;
 let canvas = document.getElementById("gameScreen");
 let context = canvas.getContext("2d");
 
-let paddle = new Paddle(GAME_WIDTH,GAME_HEIGHT);
-let ball = new Ball(GAME_WIDTH,GAME_HEIGHT);
+let game = new Game(GAME_WIDTH, GAME_HEIGHT);
+game.start();
 
-new InputHandler(paddle);
+
 let lastTime = 0;
 
 function gameLoop(timestamp){ //writing a function instead a loop makes it more efficient on slower computers
@@ -19,11 +20,8 @@ function gameLoop(timestamp){ //writing a function instead a loop makes it more 
     lastTime = timestamp;
     
     context.clearRect(0, 0, GAME_WIDTH, GAME_WIDTH); //cleans the screen
-    paddle.update(deltaTime);
-    ball.update(deltaTime);
-
-    paddle.draw(context);
-    ball.draw(context);
+    game.update(deltaTime);
+    game.draw(context);
 
     requestAnimationFrame(gameLoop);
 }
