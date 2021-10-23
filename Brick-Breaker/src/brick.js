@@ -10,7 +10,7 @@ export default class Brick{
         this.gameHeight = game.gameHeight;
         this.game = game;
 
-        this.width = 52;
+        this.width = 80;
         this.height = 24;
     }
 
