@@ -1,3 +1,5 @@
+// import { detectCollision } from "./collisionDetection";
+
 export default class Ball{
     constructor(game){
         this.image = document.getElementById("ball");
@@ -9,12 +11,10 @@ export default class Ball{
         this.gameWidth = game.gameWidth;
         this.gameHeight = game.gameHeight;
         this.game = game;
-        // this.lastPos;
     }
 
     draw(context){
         context.drawImage(this.image, this.position.x, this.position.y, this.size, this.size);
-        // context.fillRect(this.lastPos.x, this.lastPos.y, this.size/3, this.size/3)
     }
 
     update(deltaTime){

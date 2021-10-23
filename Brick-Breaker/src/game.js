@@ -30,6 +30,8 @@ export default class Game{
         this.gameObjects.forEach(object => {
             object.update(deltaTime);
         });
+
+        this.gameObjects = this.gameObjects.filter(object => !object.markedForDeletion);
     }
 
     draw(context){
