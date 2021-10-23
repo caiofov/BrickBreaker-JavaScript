@@ -1,7 +1,7 @@
 export default class Ball{
     constructor(game){
         this.image = document.getElementById("ball");
-        this.size = 16;
+        this.size = 30;
         
         this.speed = {x:4, y:2};
         this.position = {x:10, y:10};
@@ -9,15 +9,19 @@ export default class Ball{
         this.gameWidth = game.gameWidth;
         this.gameHeight = game.gameHeight;
         this.game = game;
+        // this.lastPos;
     }
 
     draw(context){
         context.drawImage(this.image, this.position.x, this.position.y, this.size, this.size);
+        // context.fillRect(this.lastPos.x, this.lastPos.y, this.size/3, this.size/3)
     }
 
     update(deltaTime){
+        
         this.position.x += this.speed.x;
         this.position.y += this.speed.y;
+        // this.lastPos = this.position;
         
         //checks collisions
 
@@ -65,9 +69,6 @@ export default class Ball{
                 this.speed.x = -this.speed.x;
 
                 this.position.x = paddleLeft - this.size;
-
-
         }
-
     }
 }
